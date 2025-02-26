@@ -1,8 +1,7 @@
 import React from "react";
-import { BsCurrencyDollar } from "react-icons/bs";
 import { GoDotFill } from "react-icons/go";
 
-import { Stacked, Pie, Button, SparkLine } from "../components";
+import { StackedChart, Button, SparkLine } from "../components";
 import {
   earningData,
   SparklineAreaData,
@@ -11,6 +10,7 @@ import {
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
+  const {currentColor} = useStateContext();
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -18,13 +18,13 @@ const Ecommerce = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Earnings</p>
-              <p className="text-2xl text-gray-600 font-semibold">$63,448.79</p>
+              <p className="text-2xl  font-semibold">$63,448.79</p>
             </div>
           </div>
           <div className="mt-6">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               text="Download"
               borderRadius="10px"
               size="md"
@@ -103,13 +103,13 @@ const Ecommerce = () => {
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="blue"
+                  color={currentColor}
                 />
               </div>
               <div className="mt-10">
                 <Button
                   color="white"
-                  bgColor="blue"
+                  bgColor={currentColor}
                   text="Download Report"
                   borderRadius="10px"
                 />
@@ -117,7 +117,7 @@ const Ecommerce = () => {
             </div>
 
             <div>
-              <Stacked width="320px" height="360px" />
+              <StackedChart width="320px" height="360px" />
             </div>
           </div>
         </div>

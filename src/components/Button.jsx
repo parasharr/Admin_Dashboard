@@ -8,4 +8,4 @@ const Button = ({ bgColor, text, color, size, borderRadius}) => {
   )
 }
 
-export default Button
+export default Button;
