@@ -14,7 +14,7 @@ const ThemeSettings = () => {
       <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
         <div className="float-right h-screen dark:text-gray-200 bg-white dark:[#484B52] w-400">
           <div className="flex justify-between items-center p-4 ml-4">
-            <p className="font-semibold text-xl">Settings</p>
+            <p className="font-semibold text-xl dark:text-gray-600">Settings</p>
             <button
               type="button"
               onClick={() => setThemeSettings(false)}
@@ -26,7 +26,7 @@ const ThemeSettings = () => {
           </div>
 
           <div className="flex-col border-t-1 border-color p-4 ml-4">
-            <p className="font-semibold text-lg">Theme Options</p>
+            <p className="font-semibold text-lg dark:text-gray-600">Theme Options</p>
 
             <div className="mt-4">
               <input
@@ -38,7 +38,7 @@ const ThemeSettings = () => {
                 onChange={setMode}
                 checked={currentMode === 'Light'}
               />
-              <label htmlFor="light" className="ml-2 text-md cursor-pointer">
+              <label htmlFor="light" className="ml-2 text-md cursor-pointer dark:text-gray-600">
                 Light
               </label>
             </div>
@@ -52,14 +52,14 @@ const ThemeSettings = () => {
                 onChange={setMode}
                 checked={currentMode === 'Dark'}
               />
-              <label htmlFor="Dark" className="ml-2 text-md cursor-pointer">
+              <label htmlFor="Dark" className="ml-2 text-md cursor-pointer dark:text-gray-600">
                 Dark
               </label>
             </div>
           </div>
 
           <div className="flex-col border-t-1 border-color p-4 ml-4">
-            <p className="font-semibold text-lg">Theme Colors</p>
+            <p className="font-semibold text-lg dark:text-gray-600">Theme Colors</p>
 
             <div className="flex gap-3">
               {themeColors.map((item, index)=> (

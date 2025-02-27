@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdOutlineCancel } from 'react-icons/md';
+import { MdOutlineCancel } from "react-icons/md";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 import { useStateContext } from "../contexts/ContextProvider";
@@ -7,8 +7,8 @@ import { cartData } from "../data/dummy";
 import { Button } from ".";
 
 const Cart = () => {
-  const { currentColor } = useStateContext();
-  const [activeMenu, setActiveMenu] = useState(false);
+  const { currentColor, handleClick } = useStateContext();
+  // const [activeMenu, setActiveMenu] = useState();
 
   return (
     <div className="bg-half-transparent w-full fixed nav-item top-0 right-0 ">
@@ -17,8 +17,9 @@ const Cart = () => {
           <p className="font-semibold text-lg">Shopping Cart</p>
           <button
             type="button"
-            onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
-            className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
+            onClick={() => handleClick(false)}
+            style={{ color: "rgb(153, 171, 180)", borderRadius: "50%" }}
+            className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
           >
             <MdOutlineCancel />
           </button>
